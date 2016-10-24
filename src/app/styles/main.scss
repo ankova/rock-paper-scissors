@@ -1,0 +1,128 @@
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
+@fa-font-path:   "../font";
+@import "../../../assets/BornAddict.ttf";
+
+$red: #e5092a;
+$green: #0fc418;
+$base-color: #F5F5DC;
+$BG: #D2D8AB;
+
+body {
+    height: 100%;
+    background: $base-color;
+    font-family: BornAddict;
+
+    .player-choice, .computer-choice {
+        height: 25em;
+        background: $BG;
+
+        span:first-child {
+            display: block;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .fa, .tie {
+            font-size: 3em;
+            opacity: 0;
+            color: $red;
+            height: 1em;
+            position: absolute;
+            top: 66%;
+            left: 47%;
+
+            &.wins {
+                animation: zoomIn 1s linear 1;
+                -webkit-animation: zoomIn 0.5s linear 1;
+                animation-delay: 0.5s;
+                -webkit-animation-delay: 0.5s;
+            }
+        }
+    }
+    .results {
+        div {
+            padding: 0.5em;
+            float: left;
+            margin: 0 0.3em;
+            text-align: center;
+        }
+        .game-results {
+            span {
+                display: block;
+            }
+        }
+        .rounds {
+            position: relative;
+            top: 1em;
+            height: 24em;
+            overflow: hidden;
+            list-style: none;
+            clear: both;
+            padding: 0;
+
+            .green {
+                color: $green;
+            }
+            .red {
+                color: $red;
+            }
+            .fa-user, .fa-laptop {
+                font-size: 1.5em;
+                margin: 0.3em 0.6em;
+            }
+        }
+    }
+    .select-option {
+        clear: both;
+        top: 2em;
+        position: relative;
+        text-align: center;
+
+        button {
+            width: 7em;
+            border: 1px solid #C1C1C5;
+        }
+    }
+}
+
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(2.0);
+        -webkit-transform: scale(2.0);
+    }
+
+    100% {
+        transform: scale(2.0);
+        -webkit-transform: scale(2.0);
+    }
+
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(2.0);
+        -webkit-transform: scale(2.0);
+    }
+
+    100% {
+        transform: scale(2.0);
+        -webkit-transform: scale(2.0);
+    }
+}
+

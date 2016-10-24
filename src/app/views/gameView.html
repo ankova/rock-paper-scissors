@@ -1,0 +1,39 @@
+<div class="player col-xs-5" ng-controller="gameController">
+    <h3>Player</h3>
+    <div class="player-choice">
+        <span>{{vm.player.selection}}</span>
+        <i class="fa fa-thumbs-o-up" ng-class="{wins: vm.player.won, hide: !vm.player.won || vm.tie}" aria-hidden="true"></i>
+        <span class="tie" ng-class="{wins: vm.tie, hide: !vm.tie}">Tie</span>
+    </div>
+</div>
+<div class="results col-xs-2">
+    <div class="game-results">
+        <span>Wins</span>
+        <span>{{vm.player.wins}}</span>
+    </div>
+    <div class="game-results">
+        <span>Ties</span>
+        <span>{{vm.ties}}</span>
+    </div>
+    <div class="game-results">
+        <span>Wins</span>
+        <span>{{vm.computer.wins}}</span>
+    </div>
+    <ul class="rounds">
+        <round ng-repeat="round in vm.rounds | reverse track by $index" value="round"></round>
+    </ul>
+</div>
+<div class="computer col-xs-5">
+    <h3>Computer</h3>
+    <div class="computer-choice">
+        <span>{{vm.computer.selection}}</span>
+        <i class="fa fa-thumbs-o-up" ng-class="{wins: vm.computer.won, hide: !vm.computer.won || vm.tie}" aria-hidden="true"></i>
+        <span class="tie" ng-class="{wins: vm.tie, hide: !vm.tie}">Tie</span>
+    </div>
+
+</div>
+<div class="select-option">
+    <button class="btn" ng-click="vm.rock()">Rock</button>
+    <button class="btn" ng-click="vm.paper()">Paper</button>
+    <button class="btn" ng-click="vm.scissors()">Scissors</button>
+</div>
